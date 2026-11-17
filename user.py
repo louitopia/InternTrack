@@ -89,7 +89,7 @@ def apply_internship(student, internships, applications):
             return
 
     confirm = input(
-        "\nSubmit application? (Y/N): "
+        "\nSubmit application? (Yes/No): "
     ).strip().lower()
 
     if confirm != "y":

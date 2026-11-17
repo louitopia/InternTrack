@@ -1,4 +1,4 @@
-
+# ADD INTERNSHIP
 def add_internship(internships):
     print("\n===== ADD INTERNSHIP =====")
 
@@ -20,8 +20,10 @@ def add_internship(internships):
     internships.append(internship)
 
     print("\nInternship added successfully!")
+    print(f"Internship ID: {internship['id']}")
 
 
+# VIEW INTERNSHIP POSTINGS
 def view_internships(internships):
     print("\n===== INTERNSHIP POSTINGS =====")
 
@@ -39,14 +41,38 @@ def view_internships(internships):
     print("------------------------------")
 
 
-def company_menu(internships):
+# VIEW STUDENT APPLICANTS
+def view_applicants(applications):
+    print("\n===== STUDENT APPLICANTS =====")
+
+    if not applications:
+        print("No applications submitted yet.")
+        return
+
+    for application in applications:
+        print("\n------------------------------")
+        print(f"Application ID: {application['id']}")
+        print(f"Student Name: {application['student_name']}")
+        print(f"Student ID: {application['student_id']}")
+        print(f"Program: {application['program']}")
+        print(f"Year Level: {application['year_level']}")
+        print(f"Company: {application['company']}")
+        print(f"Position: {application['position']}")
+        print(f"Status: {application['status']}")
+
+    print("------------------------------")
+
+
+# COMPANY/HR MENU
+def company_menu(internships, applications):
     while True:
         print("\n================================")
         print("         COMPANY/HR MENU")
         print("================================")
         print("1. Add Internship")
         print("2. View Internship Postings")
-        print("3. Back to Main Menu")
+        print("3. View Applicants")
+        print("4. Back to Main Menu")
         print("================================")
 
         choice = input("Enter your choice: ")
@@ -58,6 +84,9 @@ def company_menu(internships):
             view_internships(internships)
 
         elif choice == "3":
+            view_applicants(applications)
+
+        elif choice == "4":
             print("\nReturning to Main Menu...")
             break
 

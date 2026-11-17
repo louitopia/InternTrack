@@ -21,7 +21,7 @@ def main():
             student_menu(internships, applications)
 
         elif choice == "2":
-            company_menu(internships)
+            company_menu(internships, applications)
 
         elif choice == "3":
             print("\nThank you for using InternTrack!")
