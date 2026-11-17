@@ -4,6 +4,7 @@ from company import company_menu
 
 def main():
     internships = []
+    applications = []
 
     while True:
         print("\n================================")
@@ -17,7 +18,7 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            student_menu(internships)
+            student_menu(internships, applications)
 
         elif choice == "2":
             company_menu(internships)
