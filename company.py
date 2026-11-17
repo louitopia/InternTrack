@@ -62,6 +62,47 @@ def view_applicants(applications):
 
     print("------------------------------")
 
+# UPDATE APPLICATION STATUS
+def update_application_status(applications):
+    print("\n===== UPDATE APPLICATION STATUS =====")
+
+    if not applications:
+        print("No applications available.")
+        return
+
+    view_applicants(applications)
+
+    application_id = input(
+        "\nEnter Application ID: "
+    ).strip()
+
+    for application in applications:
+        if str(application["id"]) == application_id:
+
+            statuses = (
+                "Pending",
+                "Under Review",
+                "Interview Scheduled",
+                "Accepted",
+                "Rejected"
+            )
+
+            print("\n===== SELECT NEW STATUS =====")
+
+            for i, status in enumerate(statuses, 1):
+                print(f"{i}. {status}")
+
+            choice = input("Enter your choice: ")
+
+            if choice in ("1", "2", "3", "4", "5"):
+                application["status"] = statuses[int(choice) - 1]
+                print("\nApplication status updated successfully!")
+            else:
+                print("\nInvalid status.")
+
+            return
+
+    print("\nApplication not found.")
 
 # COMPANY/HR MENU
 def company_menu(internships, applications):
@@ -72,7 +113,8 @@ def company_menu(internships, applications):
         print("1. Add Internship")
         print("2. View Internship Postings")
         print("3. View Applicants")
-        print("4. Back to Main Menu")
+        print("4. Update Application Status")
+        print("5. Back to Main Menu")
         print("================================")
 
         choice = input("Enter your choice: ")
@@ -85,8 +127,10 @@ def company_menu(internships, applications):
 
         elif choice == "3":
             view_applicants(applications)
-
         elif choice == "4":
+            update_application_status(applications)
+
+        elif choice == "5":
             print("\nReturning to Main Menu...")
             break
 
