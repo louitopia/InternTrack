@@ -92,7 +92,7 @@ def apply_internship(student, internships, applications):
         "\nSubmit application? (Yes/No): "
     ).strip().lower()
 
-    if confirm != "y":
+    if confirm not in ("yes", "y"):
         print("\nApplication cancelled.")
         return
 

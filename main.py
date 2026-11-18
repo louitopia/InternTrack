@@ -5,6 +5,7 @@ from company import company_menu
 def main():
     internships = []
     applications = []
+    company_profile = {}
 
     while True:
         print("\n================================")
@@ -21,7 +22,7 @@ def main():
             student_menu(internships, applications)
 
         elif choice == "2":
-            company_menu(internships, applications)
+            company_menu(internships, applications, company_profile)
 
         elif choice == "3":
             print("\nThank you for using InternTrack!")

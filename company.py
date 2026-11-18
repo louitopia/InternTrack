@@ -1,18 +1,45 @@
+# CREATE COMPANY PROFILE
+def create_company_profile(company_profile):
+    print("\n===== CREATE COMPANY PROFILE =====")
+
+    if company_profile:
+        print("Company profile already exists.")
+        return
+
+    name = input("Company Name: ").strip()
+    email = input("Company Email: ").strip()
+    address = input("Company Address: ").strip()
+    description = input("Company Description: ").strip()
+
+    if not name or not email or not address or not description:
+        print("\nAll fields are required.")
+        return
+
+    company_profile["name"] = name
+    company_profile["email"] = email
+    company_profile["address"] = address
+    company_profile["description"] = description
+
+    print("\nCompany profile created successfully!")
+
 # ADD INTERNSHIP
-def add_internship(internships):
+def add_internship(internships, company_profile):
     print("\n===== ADD INTERNSHIP =====")
 
-    company = input("Company Name: ").strip()
+    if not company_profile:
+        print("Please create a company profile first.")
+        return
+
     position = input("Internship Position: ").strip()
     description = input("Description: ").strip()
 
-    if not company or not position or not description:
+    if not position or not description:
         print("\nAll fields are required.")
         return
 
     internship = {
         "id": len(internships) + 1,
-        "company": company,
+        "company": company_profile["name"],
         "position": position,
         "description": description
     }
@@ -105,32 +132,37 @@ def update_application_status(applications):
     print("\nApplication not found.")
 
 # COMPANY/HR MENU
-def company_menu(internships, applications):
+def company_menu(internships, applications, company_profile):
     while True:
         print("\n================================")
         print("         COMPANY/HR MENU")
         print("================================")
-        print("1. Add Internship")
-        print("2. View Internship Postings")
-        print("3. View Applicants")
-        print("4. Update Application Status")
-        print("5. Back to Main Menu")
+        print("1. Create Company Profile")
+        print("2. Add Internship")
+        print("3. View Internship Postings")
+        print("4. View Applicants")
+        print("5. Update Application Status")
+        print("6. Back to Main Menu")
         print("================================")
 
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            add_internship(internships)
+            create_company_profile(company_profile)
 
         elif choice == "2":
-            view_internships(internships)
+            add_internship(internships, company_profile)
 
         elif choice == "3":
-            view_applicants(applications)
+            view_internships(internships)
+
         elif choice == "4":
-            update_application_status(applications)
+            view_applicants(applications)
 
         elif choice == "5":
+            update_application_status(applications)
+
+        elif choice == "6":
             print("\nReturning to Main Menu...")
             break
 
