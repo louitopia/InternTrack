@@ -1,5 +1,3 @@
-## CS 26 Exam 2 - Technical Documentation
-
 ## 1. Program Title and Overview
 
 **InternTrack** is a Python-based application developed using Visual Studio Code. It is designed to connect college students, particularly College of Computing Education students from the University of Mindanao, with companies offering internship or On-the-Job Training (OJT) opportunities. The system provides two account types: Student/User and Company/HR. Students can browse available internship opportunities, submit applications, manage required documents, and monitor their application progress. Meanwhile, companies can manage their profiles, publish internship opportunities, review student applications, verify submitted documents, and schedule interviews. Its main purpose is to provide an organized system for managing internship opportunities and applications in one program.
