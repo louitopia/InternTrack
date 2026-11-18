@@ -22,6 +22,20 @@ def create_company_profile(company_profile):
 
     print("\nCompany profile created successfully!")
 
+# VIEW COMPANY PROFILE
+def view_company_profile(company_profile):
+    print("\n===== COMPANY PROFILE =====")
+
+    if not company_profile:
+        print("Please create a company profile first.")
+        return
+
+    print(f"Company Name: {company_profile['name']}")
+    print(f"Company Email: {company_profile['email']}")
+    print(f"Company Address: {company_profile['address']}")
+    print(f"Company Description: {company_profile['description']}")
+    print("===========================")
+
 # ADD INTERNSHIP
 def add_internship(internships, company_profile):
     print("\n===== ADD INTERNSHIP =====")
@@ -138,31 +152,35 @@ def company_menu(internships, applications, company_profile):
         print("         COMPANY/HR MENU")
         print("================================")
         print("1. Create Company Profile")
-        print("2. Add Internship")
-        print("3. View Internship Postings")
-        print("4. View Applicants")
-        print("5. Update Application Status")
-        print("6. Back to Main Menu")
+        print("2. View Company Profile")
+        print("3. Add Internship")
+        print("4. View Internship Postings")
+        print("5. View Applicants")
+        print("6. Update Application Status")
+        print("7. Back to Main Menu")
         print("================================")
 
         choice = input("Enter your choice: ")
 
         if choice == "1":
             create_company_profile(company_profile)
-
+        
         elif choice == "2":
+            view_company_profile(company_profile)
+            
+        elif choice == "3":
             add_internship(internships, company_profile)
 
-        elif choice == "3":
+        elif choice == "4":
             view_internships(internships)
 
-        elif choice == "4":
+        elif choice == "5":
             view_applicants(applications)
 
-        elif choice == "5":
+        elif choice == "6":
             update_application_status(applications)
 
-        elif choice == "6":
+        elif choice == "7":
             print("\nReturning to Main Menu...")
             break
 
