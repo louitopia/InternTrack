@@ -111,7 +111,6 @@ InternTrack is currently a console-based prototype.
 - Records are temporarily stored using Python lists and dictionaries.
 - Data is lost when the program is closed.
 - The current prototype supports one active student profile and one company profile.
-- Student profile persistence between menus is being improved.
 - Registration and login features are not yet implemented.
 - Permanent database storage has not yet been implemented.
 - A graphical user interface (GUI) is not yet available.
@@ -122,7 +121,7 @@ These limitations will be addressed as development progresses.
 
 ### Student/User Management
 
-- [ ] Complete student profile persistence fix
+- [x] Complete student profile persistence fix
 - [ ] Student registration and login
 - [ ] Manage student profile information
 - [ ] Manage internship documents
@@ -186,16 +185,20 @@ InternTrack is being developed incrementally, with features implemented and test
 
 Development progress is tracked through Git commits and GitHub.
 
+### Recent Improvements (as of Nov 19, 2026, 2:58pm)
+
+- Fixed student profile resetting when switching between menus.
+- Student profiles now remain accessible throughout the program session.
+
 ### Current Development Priorities
 
-1. Fix student profile persistence.
-2. Improve input validation and error handling.
-3. Implement Update Internship.
-4. Implement Delete Internship.
-5. Add interview scheduling and document management.
-6. Integrate SQLite.
-7. Develop the graphical user interface.
-8. Conduct final testing and debugging.
+1. Improve input validation and error handling.
+2. Implement Update Internship.
+3. Implement Delete Internship.
+4. Add interview scheduling and document management.
+5. Integrate SQLite.
+6. Develop the graphical user interface.
+7. Conduct final testing and debugging.
 
 ## 10. Project Status
 
