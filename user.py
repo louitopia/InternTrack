@@ -144,8 +144,8 @@ def view_applications(student, applications):
 
 
 # STUDENT MAIN MENU
-def student_menu(internships, applications):
-    student = None
+def student_menu(internships, applications, student_profile):
+    student = student_profile if student_profile else None
 
     while True:
         print("\n================================")
@@ -165,7 +165,9 @@ def student_menu(internships, applications):
             new_profile = create_student_profile()
 
             if new_profile is not None:
-                student = new_profile
+                student_profile.clear()
+                student_profile.update(new_profile)
+                student = student_profile
 
         elif choice == "2":
             if student is not None:
