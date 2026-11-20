@@ -50,6 +50,33 @@ def browse_internships(internships):
     print("------------------------------")
 
 
+# SEARCH INTERNSHIPS BY POSITION
+def search_internships(internships):
+    print("\n===== SEARCH INTERNSHIPS =====")
+
+    if not internships:
+        print("No internship postings available.")
+        return
+
+    keyword = input("Enter position to search: ").strip().lower()
+
+    if not keyword:
+        print("Search cannot be empty.")
+        return
+
+    results = []
+
+    for internship in internships:
+        if keyword in internship["position"].lower():
+            results.append(internship)
+
+    if results:
+        print(f"\nFound {len(results)} matching internship(s).")
+        browse_internships(results)
+    else:
+        print("\nNo matching internships found.")
+
+
 # APPLY FOR INTERNSHIP
 def apply_internship(student, internships, applications):
     print("\n===== APPLY FOR INTERNSHIP =====")
@@ -79,7 +106,7 @@ def apply_internship(student, internships, applications):
     print(f"Company: {selected_internship['company']}")
     print(f"Position: {selected_internship['position']}")
 
-    # CHECK FOR DUPLICATE APPLICATION
+# CHECK FOR DUPLICATE APPLICATION
     for application in applications:
         if (
             application["student_id"] == student["student_id"]
@@ -156,7 +183,8 @@ def student_menu(internships, applications, student_profile):
         print("3. Browse Internships")
         print("4. Apply for Internship")
         print("5. My Applications")
-        print("6. Back to Main Menu")
+        print("6. Search Internships")
+        print("7. Back to Main Menu")
         print("================================")
 
         choice = input("Enter your choice: ")
@@ -195,6 +223,9 @@ def student_menu(internships, applications, student_profile):
                 print("\nPlease create your profile first.")
 
         elif choice == "6":
+            search_internships(internships)
+       
+        elif choice == "7":
             print("\nReturning to Main Menu...")
             break
 
