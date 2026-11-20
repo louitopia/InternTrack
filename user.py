@@ -4,11 +4,15 @@ def create_student_profile():
     name = input("Full Name: ").strip()
     student_id = input("Student ID: ").strip()
     program = input("Program: ").strip()
-    year_level = input("Year Level: ").strip()
+    year_level = input("Year Level (1-5): ").strip()
 
     if not name or not student_id or not program or not year_level:
         print("\nAll fields are required.")
         return None
+
+    if year_level not in ("1", "2", "3", "4", "5"):
+        print("\nInvalid year level. Please enter 1 to 5.")
+    return None
 
     student = {
         "name": name,
