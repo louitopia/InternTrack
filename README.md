@@ -19,6 +19,7 @@ This project is primarily intended for College of Computing Education students a
 - Prevent duplicate applications
 - View submitted applications
 - Track internship application statuses
+- Search available internships by position using keywords
 
 ### Company/HR Management
 
@@ -122,6 +123,7 @@ These limitations will be addressed as development progresses.
 ### Student/User Management
 
 - [x] Complete student profile persistence fix
+- [x] Add internship search by position
 - [ ] Student registration and login
 - [ ] Manage student profile information
 - [ ] Manage internship documents
@@ -185,10 +187,14 @@ InternTrack is being developed incrementally, with features implemented and test
 
 Development progress is tracked through Git commits and GitHub.
 
-### Recent Improvements (as of Nov 19, 2026, 2:58pm)
+### Recent Improvements (as of Nov 20, 2026, 7:25pm)
 
 - Fixed student profile resetting when switching between menus.
 - Student profiles now remain accessible throughout the program session.
+- Fixed student profile persistence when switching between menus.
+- Added internship search by position.
+- Implemented case-insensitive keyword searching.
+- Added handling for empty searches and no matching internships.
 
 ### Current Development Priorities
 
