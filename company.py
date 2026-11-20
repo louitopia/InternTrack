@@ -87,6 +87,14 @@ def view_internships(internships):
 def view_applicants(applications):
     print("\n===== STUDENT APPLICANTS =====")
 
+    # COUNT TOTAL APPLICANTS
+    student_ids = set()
+
+    for application in applications:
+        student_ids.add(application["student_id"])
+
+    print(f"Total Applicants: {len(student_ids)}")
+
     if not applications:
         print("No applications submitted yet.")
         return
