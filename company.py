@@ -67,6 +67,7 @@ def add_internship(internships, company_profile):
 # VIEW INTERNSHIP POSTINGS
 def view_internships(internships):
     print("\n===== INTERNSHIP POSTINGS =====")
+    print(f"Total Internship Postings: {len(internships)}")
 
     if not internships:
         print("No internship postings available.")

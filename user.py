@@ -39,6 +39,7 @@ def view_profile(student):
 # BROWSE AVAILABLE INTERNSHIPS
 def browse_internships(internships):
     print("\n===== AVAILABLE INTERNSHIPS =====")
+    print(f"Total Internship Postings: {len(internships)}")
 
     if not internships:
         print("No internship opportunities available.")
