@@ -157,6 +157,14 @@ def apply_internship(student, internships, applications):
 def view_applications(student, applications):
     print("\n===== MY APPLICATIONS =====")
 
+    total = 0
+
+    for application in applications:
+        if application["student_id"] == student["student_id"]:
+            total += 1
+
+    print(f"Total Applications: {total}")
+
     found = False
 
     for application in applications:
