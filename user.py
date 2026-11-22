@@ -12,7 +12,7 @@ def create_student_profile():
 
     if year_level not in ("1", "2", "3", "4", "5"):
         print("\nInvalid year level. Please enter 1 to 5.")
-    return None
+        return None
 
     student = {
         "name": name,
@@ -55,7 +55,7 @@ def browse_internships(internships):
     print("------------------------------")
 
 
-# SEARCH INTERNSHIPS BY POSITION
+# SEARCH INTERNSHIPS BY POSITION OR COMPANY NAME
 def search_internships(internships):
     print("\n===== SEARCH INTERNSHIPS =====")
 
@@ -63,7 +63,7 @@ def search_internships(internships):
         print("No internship postings available.")
         return
 
-    keyword = input("Enter position to search: ").strip().lower()
+    keyword = input("Enter position or company name: ").strip().lower()
 
     if not keyword:
         print("Search cannot be empty.")
@@ -72,8 +72,12 @@ def search_internships(internships):
     results = []
 
     for internship in internships:
-        if keyword in internship["position"].lower():
+        if (
+            keyword in internship["position"].lower()
+            or keyword in internship["company"].lower()
+        ):
             results.append(internship)
+
 
     if results:
         print(f"\nFound {len(results)} matching internship(s).")
