@@ -169,6 +169,29 @@ def view_applications(student, applications):
 
     print(f"Total Applications: {total}")
 
+    # APPLICATION STATUS SUMMARY
+    print("\n===== APPLICATION STATUS SUMMARY =====")
+
+    statuses = [
+        "Pending",
+        "Under Review",
+        "Interview Scheduled",
+        "Accepted",
+        "Rejected"
+    ]
+
+    for status in statuses:
+        count = 0
+
+        for application in applications:
+            if (
+                application["student_id"] == student["student_id"]
+                and application["status"] == status
+            ):
+                count += 1
+
+        print(f"{status}: {count}")
+
     found = False
 
     for application in applications:
