@@ -20,6 +20,11 @@ This project is primarily intended for College of Computing Education students a
 - View submitted applications
 - Track internship application statuses
 - Search available internships by position using keywords
+- Search internships by position or company name
+- Validate student year level (1–5)
+- Display total internship postings
+- Display total submitted applications
+- View application status summary
 
 ### Company/HR Management
 
@@ -29,6 +34,8 @@ This project is primarily intended for College of Computing Education students a
 - View internship postings
 - View student applicants
 - Update application statuses
+- Display total internship postings
+- Display total unique applicants
 
 ### Application Statuses
 
@@ -118,30 +125,21 @@ InternTrack is currently a console-based prototype.
 
 These limitations will be addressed as development progresses.
 
-## 6. Planned Features
+## 6. Feature Development Checklist
 
-### Student/User Management
+### Recent Feature Improvements
 
-- [x] Complete student profile persistence fix
+- [x] Fix student profile persistence
 - [x] Add internship search by position
-- [ ] Student registration and login
-- [ ] Manage student profile information
-- [ ] Manage internship documents
-- [ ] View interview schedules
-
-### Company/HR Management
-
-- [x] Create company profile
-- [x] View company profile
-- [x] Add internship postings
-- [x] View internship postings
-- [x] View applicants
-- [x] Update application statuses
-- [ ] Update internship postings
-- [ ] Delete internship postings
-- [ ] Company registration and login
-- [ ] Verify applicant documents
-- [ ] Schedule applicant interviews
+- [x] Add internship search by company name
+- [x] Validate student year level
+- [x] Display total internship postings
+- [x] Display total applicants
+- [x] Display total student applications
+- [x] Add student application status summary
+- [ ] Prevent duplicate student profile creation
+- [ ] Filter applications by status
+- [ ] Validate company email
 
 ### System Improvements
 
@@ -187,14 +185,17 @@ InternTrack is being developed incrementally, with features implemented and test
 
 Development progress is tracked through Git commits and GitHub.
 
-### Recent Improvements (as of Nov 20, 2026, 7:25pm)
+### Recent Improvements (as of November 23, 2026, 11:27pm)
 
-- Fixed student profile resetting when switching between menus.
-- Student profiles now remain accessible throughout the program session.
 - Fixed student profile persistence when switching between menus.
+- Added student year level validation (1–5).
 - Added internship search by position.
-- Implemented case-insensitive keyword searching.
-- Added handling for empty searches and no matching internships.
+- Expanded internship search to support company names.
+- Added total internship postings counter.
+- Added total applicants counter for Company/HR.
+- Added total student applications counter.
+- Added student application status summary.
+- Improved student application tracking and information display.
 
 ### Current Development Priorities
 
